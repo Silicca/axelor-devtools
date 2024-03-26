@@ -8,7 +8,6 @@ import com.intellij.patterns.PlatformPatterns
 import com.intellij.util.ProcessingContext
 import com.intellij.util.indexing.FileBasedIndex
 import fr.phpierre.axelordevtools.indexes.DomainPackageIndex
-import fr.phpierre.axelordevtools.indexes.SelectionNameIndex
 import fr.phpierre.axelordevtools.references.xml.XmlNameReferenceContributor
 import org.jetbrains.annotations.NotNull
 

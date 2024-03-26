@@ -15,13 +15,13 @@ data class AxelorRequestBody(
 ) {
     fun addInContext(key: String, value: Any) {
         createContextIfnotExist();
-        (data["context"] as MutableMap<String, Any>).put(key, value)
+        (data["context"] as MutableMap<String, Any>)[key] = value
     }
 
     private fun createContextIfnotExist() {
         if(!data.containsKey("context")) {
             val emptyContext: MutableMap<String, Any> = mutableMapOf()
-            data.put("context", emptyContext)
+            data["context"] = emptyContext
         }
     }
 }

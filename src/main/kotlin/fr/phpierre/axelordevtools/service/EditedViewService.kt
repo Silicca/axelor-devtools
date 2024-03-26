@@ -1,8 +1,6 @@
 package fr.phpierre.axelordevtools.service
 
 import com.intellij.openapi.vfs.VirtualFile
-import fr.phpierre.axelordevtools.util.AxelorFile
-import javax.swing.AbstractListModel
 import javax.swing.DefaultListModel
 
 object EditedViewService {

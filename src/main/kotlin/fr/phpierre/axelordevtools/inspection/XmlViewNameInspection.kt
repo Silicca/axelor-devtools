@@ -11,14 +11,10 @@ class XmlViewNameInspection : LocalInspectionTool() {
 
     override fun buildVisitor(holder: ProblemsHolder, isOnTheFly: Boolean): PsiElementVisitor {
         return object : XmlElementVisitor() {
-            override fun visitXmlAttribute(attribute: XmlAttribute?) {
+            override fun visitXmlAttribute(attribute: XmlAttribute) {
                 super.visitXmlAttribute(attribute)
-                if(attribute?.name == "name") {
-                    attribute.value?.let {
-                        if (it.contains(" ")) {
-                            holder.registerProblem(attribute, MyBundle.message("inspection.view.name.space"))
-                        }
-                    }
+                if (attribute.name == "name" && attribute.value != null && attribute.value!!.contains(" ")) {
+                    holder.registerProblem(attribute, MyBundle.message("inspection.view.name.space"))
                 }
             }
         }

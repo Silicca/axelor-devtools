@@ -23,7 +23,7 @@ class DeleteMenusAndReloadViews(val project: Project) : HttpScenario<List<Notify
                     MyBundle.message("delete") + " " + menus.size + " " + MyBundle.message("menus"),
                     NotificationType.INFORMATION
             )
-            val t = AxelorHttpClient.request(MetaMenuRemoveAll(menus))
+            AxelorHttpClient.request(MetaMenuRemoveAll(menus))
         }
 
         return AxelorHttpClient.request(MetaViewRestoreAll())

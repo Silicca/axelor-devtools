@@ -1,23 +1,10 @@
 package fr.phpierre.axelordevtools.settings
 
-import com.intellij.execution.RunnerAndConfigurationSettings
-import com.intellij.execution.configurations.RunConfigurationBase
-import com.intellij.execution.executors.DefaultRunExecutor
-import com.intellij.extapi.psi.PsiFileBase
-import com.intellij.javaee.appServers.run.configuration.JavaeeRunConfigurationCommonSettingsBean
-import com.intellij.javaee.appServers.run.configuration.view.JavaeeRunConfigurationEditorContext
-import com.intellij.javaee.appServers.serverInstances.ApplicationServersManager
-import com.intellij.javaee.web.deployment.JspDeploymentManager
-import com.intellij.openapi.application.ApplicationManager
 import com.intellij.ui.CollectionListModel
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBList
 import com.intellij.ui.components.JBTextField
 import com.intellij.util.ui.FormBuilder
-import org.jetbrains.idea.tomcat.server.TomcatConfiguration
-import org.jetbrains.idea.tomcat.server.TomcatIntegration
-import org.jetbrains.idea.tomcat.server.TomcatLocalModel
-import javax.swing.JButton
 import javax.swing.JCheckBox
 import javax.swing.JList
 import javax.swing.JPanel
@@ -57,5 +44,4 @@ class AxelorSettingsComponent {
                 .addLabeledComponent(JBLabel("Activate Axelor views hot reload"), hotReloadActivated)
                 .panel
     }
-
 }

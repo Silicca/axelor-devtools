@@ -9,7 +9,6 @@ import com.intellij.openapi.project.Project
 import com.intellij.ui.components.JBList
 import fr.phpierre.axelordevtools.MyBundle
 import fr.phpierre.axelordevtools.http.AxelorHttpClient
-import fr.phpierre.axelordevtools.http.AxelorRequestBody
 import fr.phpierre.axelordevtools.http.AxelorResponseBody
 import fr.phpierre.axelordevtools.http.model.NotifyModel
 import fr.phpierre.axelordevtools.http.request.metaview.MetaViewRestoreAll

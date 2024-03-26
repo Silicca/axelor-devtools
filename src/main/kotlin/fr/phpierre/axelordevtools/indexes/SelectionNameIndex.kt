@@ -6,25 +6,24 @@ import com.intellij.util.indexing.*
 import com.intellij.util.io.DataExternalizer
 import com.intellij.util.io.EnumeratorStringDescriptor
 import com.intellij.util.io.KeyDescriptor
-import com.intellij.util.io.VoidDataExternalizer
+import fr.phpierre.axelordevtools.util.UnitDataExternalizer
 import fr.phpierre.axelordevtools.util.XmlUtil
-import gnu.trove.THashMap
 
-class SelectionNameIndex : FileBasedIndexExtension<String, Void?>() {
+class SelectionNameIndex : FileBasedIndexExtension<String, Unit?>() {
 
     companion object {
         val KEY =
-            ID.create<String, Void?>("axelor.selections.name")
+            ID.create<String, Unit?>("axelor.selections.name")
     }
 
-    override fun getName(): ID<String, Void?> {
+    override fun getName(): ID<String, Unit?> {
         return KEY
     }
 
-    override fun getIndexer(): DataIndexer<String, Void?, FileContent> {
+    override fun getIndexer(): DataIndexer<String, Unit?, FileContent> {
         return DataIndexer { inputData: FileContent ->
             val psiFile = inputData.psiFile
-            val map: MutableMap<String, Void?> = THashMap()
+            val map: MutableMap<String, Unit?> = HashMap()
             val sets: Set<String> =
                 XmlUtil.indexSelectionName(psiFile)
             for (name in sets) {
@@ -38,8 +37,8 @@ class SelectionNameIndex : FileBasedIndexExtension<String, Void?>() {
         return EnumeratorStringDescriptor()
     }
 
-    override fun getValueExternalizer(): DataExternalizer<Void?> {
-        return VoidDataExternalizer.INSTANCE
+    override fun getValueExternalizer(): DataExternalizer<Unit?> {
+        return UnitDataExternalizer.INSTANCE
     }
 
     override fun getVersion(): Int {

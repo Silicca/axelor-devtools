@@ -6,7 +6,6 @@ import com.intellij.util.indexing.*
 import com.intellij.util.io.*
 import fr.phpierre.axelordevtools.objects.MetaReference
 import fr.phpierre.axelordevtools.util.XmlUtil
-import gnu.trove.THashMap
 
 class ActionReferencesIndex : FileBasedIndexExtension<String, Int>() {
 
@@ -22,7 +21,7 @@ class ActionReferencesIndex : FileBasedIndexExtension<String, Int>() {
     override fun getIndexer(): DataIndexer<String, Int, FileContent> {
         return DataIndexer { inputData: FileContent ->
             val psiFile = inputData.psiFile
-            val map: MutableMap<String, Int> = THashMap()
+            val map: MutableMap<String, Int> = HashMap()
             val refs: Set<MetaReference> =
                 XmlUtil.referenceAxelorActions(psiFile)
             for (ref in refs) {

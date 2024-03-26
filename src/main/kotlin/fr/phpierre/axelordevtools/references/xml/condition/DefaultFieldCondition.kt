@@ -14,11 +14,7 @@ class DefaultFieldCondition(@NotNull vararg keys: String) :
             @NotNull element: PsiElement,
             context: ProcessingContext
         ): Boolean {
-            if(element is XmlAttributeValue) {
-                // Dummy fields can't target a field in a domain.
-                if(FieldCompletionContributor.defaultColumns.contains(element.value))
-                    return false
-            }
-            return true
+            // Dummy fields can't target a field in a domain.
+            return !(element is XmlAttributeValue && FieldCompletionContributor.defaultColumns.contains(element.value))
         }
 }

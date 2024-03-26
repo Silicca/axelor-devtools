@@ -102,7 +102,7 @@ class FieldCompletionContributor : CompletionContributor() {
 
     private fun formatType(xmlField: XmlTag): String {
         val xmlType = xmlField.name
-        var relationType = ""
+        val relationType: String
         var javaType = ""
 
         if(relationTag.contains(xmlType)) {
@@ -111,20 +111,23 @@ class FieldCompletionContributor : CompletionContributor() {
             }
         }
 
-        if (xmlType == "many-to-many") {
-            javaType = "List<$javaType>"
-            relationType = " (m2m)"
-        } else if (xmlType == "one-to-many") {
-            javaType = "List<$javaType>"
-            relationType = " (o2m)"
-        } else if (xmlType == "many-to-one") {
-            relationType = " (m2o)"
-        } else if(xmlType == "one-to-one") {
-            relationType = " (o2o)"
-        } else {
-            relationType = xmlField.name
+        when(xmlType) {
+            "many-to-many" -> {
+                javaType = "List<$javaType>"
+                relationType = " (m2m)"
+            }
+            "one-to-many" -> {
+                javaType = "List<$javaType>"
+                relationType = " (o2m)"
+            }
+            "many-to-one" -> {
+                relationType = " (m2o)"
+            }
+            "one-to-one" -> {
+                relationType = " (o2o)"
+            }
+            else -> relationType = xmlField.name
         }
-
         return "$javaType$relationType"
     }
 
@@ -138,5 +141,4 @@ class FieldCompletionContributor : CompletionContributor() {
                 .withIcon(AxelorIcons.fieldIcon))
         }
     }
-
 }

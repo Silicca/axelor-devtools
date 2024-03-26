@@ -1,13 +1,7 @@
 package fr.phpierre.axelordevtools.contributor.xml
 
-import com.intellij.codeInsight.completion.*
-import com.intellij.codeInsight.lookup.LookupElementBuilder
-import com.intellij.icons.AllIcons
-import com.intellij.lang.xml.XMLLanguage
-import com.intellij.patterns.PlatformPatterns
+import com.intellij.codeInsight.completion.CompletionContributor
 import com.intellij.patterns.XmlPatterns
-import com.intellij.util.ProcessingContext
-import org.jetbrains.annotations.NotNull
 
 class DomainCompletionContributor :  CompletionContributor() {
 

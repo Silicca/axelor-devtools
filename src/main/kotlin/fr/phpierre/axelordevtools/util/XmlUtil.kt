@@ -500,7 +500,7 @@ class XmlUtil(matchingVisitor: GlobalMatchingVisitor) {
             for (virtualFile in files) {
                 val datas = FileBasedIndex.getInstance().getFileData(ViewReferencesIndex.KEY, virtualFile, project)
 
-                datas.entries.forEach { (key, value) ->
+                datas.entries.forEach { (_, value) ->
                     val psiFile = PsiManager.getInstance(project).findFile(virtualFile)
                     val psiElement = PsiUtil.getElementAtOffset(psiFile!!, value)
                     val nameFound = (psiElement.parent as XmlAttribute).value
@@ -521,7 +521,7 @@ class XmlUtil(matchingVisitor: GlobalMatchingVisitor) {
             for (virtualFile in files) {
                 val datas = FileBasedIndex.getInstance().getFileData(ActionReferencesIndex.KEY, virtualFile, project)
 
-                datas.entries.forEach { (key, value) ->
+                datas.entries.forEach { (_, value) ->
                     val psiFile = PsiManager.getInstance(project).findFile(virtualFile)
                     val psiElement = PsiUtil.getElementAtOffset(psiFile!!, value)
                     val namesFound = (psiElement.parent as XmlAttribute).value?.split(",")

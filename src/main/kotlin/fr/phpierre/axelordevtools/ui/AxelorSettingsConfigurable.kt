@@ -2,7 +2,6 @@ package fr.phpierre.axelordevtools.ui
 
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.project.Project
-import com.intellij.ui.layout.selected
 import fr.phpierre.axelordevtools.settings.AxelorSettingsComponent
 import fr.phpierre.axelordevtools.settings.AxelorSettingsState
 import org.jetbrains.annotations.NotNull

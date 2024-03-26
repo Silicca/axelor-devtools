@@ -3,7 +3,6 @@ package fr.phpierre.axelordevtools.objects.xml.action
 import com.intellij.psi.xml.XmlTag
 import fr.phpierre.axelordevtools.objects.MetaReference
 import fr.phpierre.axelordevtools.objects.xml.AbstractAction
-import fr.phpierre.axelordevtools.objects.xml.XmlParentActionReference
 import fr.phpierre.axelordevtools.objects.xml.XmlParentViewReference
 
 class ActionView(xmlTag: XmlTag) : AbstractAction(xmlTag), XmlParentViewReference {

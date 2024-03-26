@@ -3,8 +3,6 @@ package fr.phpierre.axelordevtools.http
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.exc.MismatchedInputException
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import fr.phpierre.axelordevtools.http.model.AxelorModel
-import fr.phpierre.axelordevtools.http.model.NotifyModel
 import fr.phpierre.axelordevtools.settings.AxelorSettingsState
 import org.apache.http.Header
 import org.apache.http.NameValuePair
@@ -15,8 +13,6 @@ import org.apache.http.client.methods.HttpEntityEnclosingRequestBase
 import org.apache.http.client.methods.HttpGet
 import org.apache.http.client.methods.HttpPost
 import org.apache.http.cookie.Cookie
-import org.apache.http.entity.ContentType
-import org.apache.http.entity.StringEntity
 import org.apache.http.impl.client.BasicCookieStore
 import org.apache.http.impl.client.HttpClientBuilder
 import org.apache.http.message.BasicHeader
@@ -100,7 +96,7 @@ abstract class AxelorHttpClient<T> {
             val url = settings.getUrlConfig()
             val get = HttpGet(url)
             try {
-                val response: CloseableHttpResponse = HttpClient.builder.build().execute(get)
+                HttpClient.builder.build().execute(get)
             } catch (e: Exception) {
                 return false
             }

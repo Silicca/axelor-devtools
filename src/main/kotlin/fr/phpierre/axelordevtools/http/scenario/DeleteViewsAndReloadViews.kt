@@ -1,7 +1,6 @@
 package fr.phpierre.axelordevtools.http.scenario
 
 import com.intellij.notification.NotificationType
-import com.intellij.openapi.progress.runBackgroundableTask
 import com.intellij.openapi.project.Project
 import fr.phpierre.axelordevtools.MyBundle
 import fr.phpierre.axelordevtools.http.AxelorHttpClient
@@ -23,9 +22,9 @@ class DeleteViewsAndReloadViews(val project: Project) : HttpScenario<List<Notify
             AxelorHttpResponseNotifier.notify(project,
                     MyBundle.message("delete") + " " + views.size + " " + MyBundle.message("views"),
                     NotificationType.INFORMATION)
-            val t = AxelorHttpClient.request(MetaViewRemoveAll(views))
+            AxelorHttpClient.request(MetaViewRemoveAll(views))
         }
-        
+
         return AxelorHttpClient.request(MetaViewRestoreAll())
     }
 }

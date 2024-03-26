@@ -5,7 +5,6 @@ import fr.phpierre.axelordevtools.http.AxelorHttpClient
 import fr.phpierre.axelordevtools.http.AxelorRequestBody
 import fr.phpierre.axelordevtools.http.AxelorResponseBody
 import fr.phpierre.axelordevtools.http.model.AxelorModel
-import fr.phpierre.axelordevtools.http.model.NotifyModel
 import fr.phpierre.axelordevtools.settings.AxelorSettingsState
 import org.apache.http.client.methods.CloseableHttpResponse
 import org.apache.http.client.methods.HttpPost

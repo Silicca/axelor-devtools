@@ -7,11 +7,6 @@ import com.intellij.psi.xml.XmlTag
 import fr.phpierre.axelordevtools.util.JavaUtil
 import org.jetbrains.annotations.NotNull
 import org.jetbrains.annotations.Nullable
-import org.jetbrains.plugins.gradle.settings.GradleLocalSettings
-import org.jetbrains.plugins.gradle.settings.GradleProjectSettings
-import org.jetbrains.plugins.gradle.settings.GradleSettings
-import org.jetbrains.plugins.gradle.settings.GradleSystemSettings
-import org.jetbrains.plugins.gradle.util.GradleUtil
 
 class JavaMethodReference(@NotNull element: PsiElement) : PsiReferenceBase<PsiElement?>(element),
         PsiPolyVariantReference {

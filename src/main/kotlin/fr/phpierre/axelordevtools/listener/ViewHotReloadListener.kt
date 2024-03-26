@@ -5,9 +5,7 @@ import com.intellij.notification.NotificationType
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.compiler.CompilationStatusListener
 import com.intellij.openapi.compiler.CompileContext
-import com.intellij.openapi.compiler.CompilerMessageCategory
 import com.intellij.openapi.util.Key
-import com.intellij.xdebugger.XDebuggerManager
 import fr.phpierre.axelordevtools.http.AxelorHttpClient
 import fr.phpierre.axelordevtools.http.AxelorResponseBody
 import fr.phpierre.axelordevtools.http.model.NotifyModel

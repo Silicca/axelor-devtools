@@ -1,7 +1,9 @@
 package fr.phpierre.axelordevtools.objects.dom
 
-import com.intellij.psi.xml.XmlAttribute
-import com.intellij.util.xml.*
+import com.intellij.util.xml.DomElement
+import com.intellij.util.xml.GenericAttributeValue
+import com.intellij.util.xml.SubTag
+import com.intellij.util.xml.SubTagList
 
 interface DomainModels : DomElement{
 

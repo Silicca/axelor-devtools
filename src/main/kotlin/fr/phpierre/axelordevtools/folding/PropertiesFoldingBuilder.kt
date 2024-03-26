@@ -1,6 +1,5 @@
 package fr.phpierre.axelordevtools.folding
 
-import com.intellij.find.findUsages.JavaMethodFindUsagesOptions
 import com.intellij.lang.ASTNode
 import com.intellij.lang.folding.FoldingBuilderEx
 import com.intellij.lang.folding.FoldingDescriptor
@@ -11,8 +10,6 @@ import com.intellij.openapi.util.TextRange
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiLiteralExpression
 import com.intellij.psi.PsiMethodCallExpression
-import com.intellij.psi.impl.compiled.ClsClassImpl
-import com.intellij.psi.impl.source.PsiClassImpl
 import com.intellij.psi.util.PsiTreeUtil
 import fr.phpierre.axelordevtools.util.XmlUtil
 
